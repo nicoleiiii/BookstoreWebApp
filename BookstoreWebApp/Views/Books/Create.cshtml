@@ -1,0 +1,28 @@
+﻿@model BookstoreWebApp.Models.Book
+
+@{
+    ViewData["Title"] = "Add a New Book";
+}
+
+<h2>Add a New Book</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>Title:</label>
+        <input type="text" class="form-control" name="Title" required />
+    </div>
+    <div class="form-group">
+        <label>Author:</label>
+        <input type="text" class="form-control" name="Author" required />
+    </div>
+    <div class="form-group">
+        <label>Price:</label>
+        <input type="number" step="0.01" class="form-control" name="Price" required />
+    </div>
+    <div class="form-group">
+        <label>Publication Year:</label>
+        <input type="number" class="form-control" name="PublicationYear" required />
+    </div>
+    <button type="submit" class="btn btn-success">Add Book</button>
+</form>
+
