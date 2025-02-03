@@ -25,7 +25,7 @@ namespace BookstoreWebApp.Controllers
 
         public IActionResult Edit(int id)
         {
-            var book = BookData.Books.FirstOrDefault(b => b.Id == id);
+            var book = BookData.Books.Find(b => b.Id == id);
             if (book == null) return NotFound();
             return View(book);
         }
@@ -33,7 +33,7 @@ namespace BookstoreWebApp.Controllers
         [HttpPost]
         public IActionResult Edit(Book book)
         {
-            var existingBook = BookData.Books.FirstOrDefault(b => b.Id == book.Id);
+            var existingBook = BookData.Books.Find(b => b.Id == book.Id);
             if (existingBook == null) return NotFound();
 
             existingBook.Title = book.Title;
@@ -46,7 +46,7 @@ namespace BookstoreWebApp.Controllers
 
         public IActionResult Delete(int id)
         {
-            var book = BookData.Books.FirstOrDefault(b => b.Id == id);
+            var book = BookData.Books.Find(b => b.Id == id);
             if (book != null)
             {
                 BookData.Books.Remove(book);
